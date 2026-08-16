@@ -3,409 +3,1441 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jason Bonzon — Tennis Coaching & Performance Development | Orange County</title>
-<meta name="description" content="A different way to learn the game. Private tennis coaching, ball-machine training, and performance development in Orange County — built on the Elemental Performance System.">
-<meta property="og:title" content="Jason Bonzon — A Different Way to Learn the Game">
-<meta property="og:description" content="Private tennis coaching & performance development in Orange County. Learn how you actually learn — the Elemental Performance System.">
-<meta name="theme-color" content="#F7F1E8">
+
+<title>Bonsai Tennis Practice</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
 <style>
-  :root{
-    --paper:#F7F1E8;        /* warm cream base */
-    --sand:#EDE4D6;         /* secondary surface */
-    --sand-deep:#E4D8C6;
-    --clay:#C2674B;         /* terracotta accent — CTAs/links only */
-    --clay-deep:#A8543B;
-    --ink:#3A352E;          /* warm near-black */
-    --taupe:#7C6F5A;        /* supporting earth / muted text */
-    --line:rgba(58,53,46,.14);
-    --serif:'Fraunces',Georgia,serif;
-    --sans:'Inter',system-ui,-apple-system,sans-serif;
-    /* element accents — muted, cohesive, earthy */
-    --earth:#8A6F4E;
-    --water:#5F8385;
-    --fire:#C2674B;
-    --wind:#8FA579;
-    --void:#4A453E;
+:root {
+  --bonsai-blue: #17324D;
+  --dark-blue: #17324D;
+  --green: #6F9F72;
+  --gold: #C7A34A;
+  --guide-blue: #537A9A;
+  --orange: #C96A32;
+  --white: #F7F5EF;
+  --black: #090909;
+  --beige: #D8CBB2;
+
+  --structure-1: #D8CCB6;
+  --structure-2: #AFA38D;
+  --adaptation-1: #4F9993;
+  --adaptation-2: #245F65;
+  --understanding-1: #9299D0;
+  --understanding-2: #565E9D;
+  --pressure-1: #D66D3D;
+  --pressure-2: #8E3026;
+  --void: #050505;
+
+  --sans: Arial, Helvetica, sans-serif;
+  --serif: "Merriweather", Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: #111;
+  font-family: var(--sans);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bonsai-blue);
+  color: white;
+  padding: 14px 24px 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.brand {
+  font-size: 15px;
+  line-height: 1.05;
+  letter-spacing: .11em;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.brand-bonsai {
+  color: white;
+}
+
+.brand-tennis {
+  color: var(--green);
+}
+
+.brand-business {
+  color: white;
+}
+
+.guided-by {
+  margin-top: 7px;
+  font-size: 17px;
+  line-height: 1;
+  letter-spacing: .08em;
+}
+
+.guided-by-name {
+  color: var(--green);
+}
+
+.section {
+  padding: 88px 7vw;
+}
+
+.section-title {
+  margin-bottom: 34px;
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .17em;
+  line-height: 1.2;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+.hero {
+  min-height: calc(100vh - 76px);
+  padding: 72px 7vw 64px;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--bonsai-blue) 0%,
+      #203C54 55%,
+      #294A58 100%
+    );
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero .section-title {
+  align-self: flex-start;
+}
+
+.hero-subtitle {
+  margin: 0 auto 22px;
+  max-width: 1050px;
+  text-align: center;
+  font-size: clamp(42px, 7vw, 82px);
+  line-height: .98;
+  letter-spacing: .035em;
+  font-weight: 700;
+}
+
+.hero-description {
+  max-width: 680px;
+  margin: 0 auto 25px;
+  text-align: center;
+  font-size: clamp(15px, 2vw, 19px);
+  line-height: 1.45;
+  color: rgba(255,255,255,.88);
+}
+
+.hero-quote {
+  margin: 0 auto 54px;
+  text-align: center;
+  font-size: clamp(17px, 2.4vw, 24px);
+  line-height: 1.35;
+  color: var(--green);
+}
+
+.hero-services {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.hero-services-title {
+  margin-bottom: 22px;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: .18em;
+  font-weight: 700;
+}
+
+.service-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.preview-card {
+  min-width: 0;
+  text-align: center;
+  padding: 16px 12px 14px;
+  border-top: 1px solid rgba(255,255,255,.35);
+  border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+.preview-symbol {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 26px;
+}
+
+.preview-name {
+  min-height: 42px;
+  font-size: 12px;
+  line-height: 1.25;
+  letter-spacing: .08em;
+  font-weight: 700;
+}
+
+.preview-price {
+  margin-top: 12px;
+  display: inline-block;
+  text-align: left;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.cash {
+  color: var(--green);
+}
+
+.digital {
+  color: var(--gold);
+}
+
+.philosophy {
+  background: var(--white);
+}
+
+.philosophy-heading {
+  max-width: 700px;
+  margin-bottom: 38px;
+  font-size: clamp(36px, 6vw, 64px);
+  line-height: 1.02;
+  letter-spacing: -.025em;
+}
+
+.philosophy-copy {
+  max-width: 900px;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.philosophy-copy p {
+  margin-bottom: 28px;
+}
+
+.bonsai-name {
+  font-weight: 700;
+}
+
+.bonsai-name .bonsai {
+  color: #111;
+}
+
+.bonsai-name .tennis {
+  color: var(--green);
+}
+
+.bonsai-name .business {
+  color: #111;
+}
+
+.cascade {
+  margin-top: 68px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--green);
+  font-size: clamp(16px, 2vw, 22px);
+  line-height: 1.15;
+  letter-spacing: .10em;
+  font-weight: 700;
+}
+
+.cascade div:nth-child(2) {
+  margin-left: 9%;
+}
+
+.cascade div:nth-child(3) {
+  margin-left: 18%;
+}
+
+.environments {
+  background: #E9E5DA;
+}
+
+.environment-intro {
+  max-width: 800px;
+  margin-bottom: 42px;
+}
+
+.environment-intro h3 {
+  margin-bottom: 10px;
+  font-size: clamp(27px, 4vw, 42px);
+  line-height: 1.05;
+}
+
+.environment-intro p {
+  color: var(--dark-blue);
+  font-size: 16px;
+}
+
+.environment-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.environment-card {
+  position: relative;
+  min-height: 480px;
+  padding: 28px 21px 25px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #111;
+  box-shadow:
+    inset 0 1px rgba(255,255,255,.35),
+    0 8px 24px rgba(0,0,0,.08);
+}
+
+.environment-card.structure {
+  background: linear-gradient(
+    to top,
+    var(--structure-2),
+    var(--structure-1) 55%,
+    #E6DECF
+  );
+}
+
+.environment-card.adaptation {
+  background: linear-gradient(
+    to top,
+    var(--adaptation-2),
+    var(--adaptation-1) 55%,
+    #83B9B0
+  );
+}
+
+.environment-card.understanding {
+  background: linear-gradient(
+    to top,
+    var(--understanding-2),
+    var(--understanding-1) 55%,
+    #B6B9E0
+  );
+}
+
+.environment-card.pressure {
+  background: linear-gradient(
+    to top,
+    var(--pressure-2),
+    var(--pressure-1) 55%,
+    #E78B5C
+  );
+}
+
+.environment-card.uncertainty {
+  background: var(--void);
+  color: white;
+}
+
+.environment-symbol {
+  min-height: 65px;
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 18px;
+}
+
+.environment-title {
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: .12em;
+}
+
+.environment-list {
+  margin: 0;
+  padding-left: 19px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.environment-bottom {
+  margin-top: auto;
+}
+
+.environment-divider {
+  height: 1px;
+  width: 100%;
+  margin-bottom: 17px;
+  background: rgba(255,255,255,.58);
+}
+
+.environment-statement {
+  margin: 0;
+  color: white;
+  font-size: 11px;
+  line-height: 1.35;
+  letter-spacing: .09em;
+  font-weight: 700;
+}
+
+.environment-card.uncertainty .environment-statement {
+  color: var(--gold);
+}
+
+.players {
+  background: #F2EEE4;
+}
+
+.players-heading {
+  max-width: 800px;
+  margin-bottom: 45px;
+  font-size: clamp(39px, 6vw, 67px);
+  line-height: .98;
+}
+
+.player-grid,
+.training-grid,
+.discount-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.player-card {
+  min-height: 315px;
+  padding: 27px 22px;
+  background: var(--beige);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0,0,0,.08);
+}
+
+.player-card.special {
+  background: var(--dark-blue);
+  color: white;
+}
+
+.player-card h3 {
+  margin-bottom: 17px;
+  font-size: 15px;
+}
+
+.player-card p {
+  margin-bottom: 25px;
+  font-size: 15px;
+}
+
+.player-testimonial {
+  margin-top: auto;
+  color: var(--gold);
+  font-family: var(--serif);
+  font-size: 13px;
+  font-style: italic;
+}
+
+.player-card.special .player-testimonial {
+  color: var(--beige);
+}
+
+.motivations {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.motivation-card {
+  padding: 23px 20px;
+  border-top: 1px solid var(--dark-blue);
+}
+
+.motivation-card h3 {
+  margin-bottom: 12px;
+  color: var(--dark-blue);
+  font-size: 12px;
+  letter-spacing: .11em;
+}
+
+.training {
+  background: #E8E3D8;
+}
+
+.training-card {
+  position: relative;
+  min-height: 530px;
+  padding: 25px 21px;
+  background: #F4F0E6;
+  border: 1px solid rgba(0,0,0,.09);
+  display: flex;
+  flex-direction: column;
+}
+
+.training-card.lab {
+  background: linear-gradient(180deg, #172B3C, #0B1116);
+  color: white;
+}
+
+.training-symbol {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.training-title {
+  margin-bottom: 13px;
+  font-size: 15px;
+  letter-spacing: .10em;
+}
+
+.training-price {
+  margin-bottom: 23px;
+  font-size: 13px;
+}
+
+.training-description {
+  font-size: 14px;
+  line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.training-description .voice {
+  display: block;
+  margin-top: auto;
+  padding-top: 55px;
+  color: var(--green);
+  font-size: 12px;
+  letter-spacing: .08em;
+  font-weight: 700;
+}
+
+.session {
+  background: var(--white);
+}
+
+.session-content {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 60px;
+}
+
+.session-list {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.session-list li {
+  margin-bottom: 14px;
+}
+
+.guide {
+  color: var(--guide-blue);
+}
+
+.session-availability-note {
+  max-width: 650px;
+  color: var(--guide-blue);
+  font-size: 14px;
+}
+
+.availability-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.availability-card {
+  padding: 23px 18px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: #F2EEE4;
+}
+
+.availability-card h3 {
+  color: var(--green);
+  font-size: 13px;
+  letter-spacing: .13em;
+}
+
+.availability-time {
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.availability-description {
+  margin: 0;
+  color: var(--guide-blue);
+  font-size: 13px;
+}
+
+.discounts {
+  background: #E9E4D9;
+}
+
+.discount-intro {
+  max-width: 750px;
+  margin-bottom: 34px;
+  font-size: 16px;
+}
+
+.discount-card {
+  min-height: 220px;
+  padding: 25px 21px;
+  background: #F6F2E8;
+  border: 1px solid rgba(0,0,0,.09);
+}
+
+.discount-card.special {
+  background: var(--dark-blue);
+  color: white;
+}
+
+.discount-card h3 {
+  margin-bottom: 22px;
+  font-size: 13px;
+  letter-spacing: .10em;
+}
+
+.discount-number {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.testimonials {
+  background: #F2EEE5;
+}
+
+.testimonial-heading {
+  margin-bottom: 40px;
+  font-size: clamp(35px, 5vw, 56px);
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.testimonial {
+  padding: 30px 25px;
+  background: #E7DFCF;
+  border: 1px solid rgba(0,0,0,.07);
+}
+
+.testimonial.josh {
+  grid-column: 1 / -1;
+  background: var(--dark-blue);
+  color: white;
+}
+
+.testimonial blockquote {
+  margin: 0 0 25px;
+  font-family: var(--serif);
+  font-size: 15px;
+  line-height: 1.65;
+  font-style: italic;
+}
+
+.testimonial-meta {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: .12em;
+  font-weight: 700;
+}
+
+.outro {
+  padding: 110px 7vw 85px;
+  background: linear-gradient(180deg, #203B51, var(--bonsai-blue));
+  color: white;
+  text-align: center;
+}
+
+.outro-title {
+  margin-bottom: 35px;
+  font-size: clamp(40px, 7vw, 80px);
+  line-height: .95;
+}
+
+.outro-title span {
+  display: block;
+}
+
+.outro-copy {
+  max-width: 760px;
+  margin: 0 auto 36px;
+  color: rgba(255,255,255,.9);
+  font-size: 16px;
+}
+
+.outro-contact {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.outro-contact a {
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer {
+  position: relative;
+  padding: 22px 7vw 28px;
+  background: #0E2639;
+  color: rgba(255,255,255,.55);
+  font-size: 11px;
+}
+
+.updated {
+  position: absolute;
+  right: 7vw;
+  bottom: 28px;
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: .08em;
+}
+
+@media (max-width: 1050px) {
+  .environment-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{
-    background:var(--paper);color:var(--ink);
-    font-family:var(--sans);font-size:19px;line-height:1.7;
-    -webkit-font-smoothing:antialiased;
+
+  .player-grid,
+  .training-grid,
+  .discount-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
-  .narrow{max-width:760px;margin-left:auto;margin-right:auto}
-  a{color:var(--clay);text-decoration:none}
-  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-.015em;color:var(--ink)}
-  .eyebrow{font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--clay);font-weight:600}
-  .serif-em{font-family:var(--serif);font-style:italic;font-weight:400}
 
-  /* ── Buttons (one CTA verb everywhere) ── */
-  .btn{
-    display:inline-flex;align-items:center;gap:.6em;
-    background:var(--clay);color:var(--paper);
-    font-weight:600;font-size:.98rem;letter-spacing:.01em;
-    padding:15px 30px;border-radius:999px;border:none;cursor:pointer;
-    transition:background .2s ease,transform .15s ease;
+  .motivations {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .btn:hover{background:var(--clay-deep);transform:translateY(-2px);color:var(--paper)}
-  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
-  .btn-ghost:hover{background:var(--sand);color:var(--ink)}
 
-  /* ── Nav ── */
-  nav{position:sticky;top:0;z-index:50;background:rgba(247,241,232,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:70px}
-  .brand{font-family:var(--serif);font-size:1.18rem;font-weight:600;letter-spacing:-.01em}
-  .brand small{display:block;font-family:var(--sans);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--taupe);font-weight:600;margin-top:1px}
-  .nav-links{display:flex;align-items:center;gap:34px}
-  .nav-links a{color:var(--ink);font-size:.92rem;font-weight:500}
-  .nav-links a:hover{color:var(--clay)}
-  .nav-links .btn{padding:10px 22px}
-  @media(max-width:760px){.nav-links a:not(.btn){display:none}}
+  .session-content {
+    grid-template-columns: 1fr;
+  }
+}
 
-  /* ── Hero ── */
-  header.hero{padding:96px 0 70px}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
-  @media(max-width:880px){.hero-grid{grid-template-columns:1fr;gap:40px}}
-  .hero h1{font-size:clamp(2.6rem,6vw,4.2rem);margin:22px 0 0}
-  .hero h1 em{font-style:italic;color:var(--clay)}
-  .hero .sub{font-size:1.12rem;color:var(--taupe);margin:26px 0 34px;max-width:30ch}
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-  .hero-meta{margin-top:30px;font-size:.86rem;color:var(--taupe);letter-spacing:.02em}
-  /* breathing photo placeholder */
-  .photo{position:relative;border-radius:18px;overflow:hidden;background:
-      linear-gradient(150deg,var(--sand) 0%,var(--sand-deep) 60%,#d8c4a8 100%);
-      aspect-ratio:4/5;display:grid;place-items:center;box-shadow:0 24px 60px -28px rgba(58,53,46,.4)}
-  .photo::after{content:"";position:absolute;inset:0;background:
-      radial-gradient(120% 80% at 75% 15%,rgba(194,103,75,.16),transparent 55%)}
-  .photo .ph-note{position:relative;z-index:1;color:var(--taupe);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:0 24px;opacity:.7}
-  .photo.wide{aspect-ratio:16/9}
+@media (max-width: 720px) {
+  .site-header {
+    padding: 12px 16px;
+  }
 
-  /* ── Section rhythm ── */
-  section{padding:104px 0}
-  .sec-head{max-width:720px}
-  .sec-head h2{font-size:clamp(2rem,4.2vw,3rem);margin:16px 0 0}
-  .sec-head .lead{font-size:1.15rem;color:var(--taupe);margin-top:20px}
-  .divider{height:1px;background:var(--line);border:0}
+  .brand {
+    font-size: 12px;
+    white-space: normal;
+  }
 
-  /* ── Positioning strip ── */
-  .position{background:var(--sand)}
-  .position .big{font-family:var(--serif);font-size:clamp(1.5rem,3.4vw,2.15rem);line-height:1.32;font-weight:400;max-width:20ch}
-  .position .big b{font-weight:600;color:var(--ink)}
-  .position-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}
-  @media(max-width:880px){.position-grid{grid-template-columns:1fr;gap:36px}}
+  .guided-by {
+    font-size: 14px;
+  }
 
-  /* ── Method: Five Environments ── */
-  .method-intro{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:54px}
-  .elements{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
-  @media(max-width:980px){.elements{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:560px){.elements{grid-template-columns:1fr}}
-  .el-card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:28px 24px 30px;position:relative;overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
-  .el-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -26px rgba(58,53,46,.45)}
-  .el-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--el)}
-  .el-glyph{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:1.3rem;color:var(--paper);background:var(--el);margin-bottom:20px}
-  .el-name{font-family:var(--serif);font-size:1.35rem;font-weight:600}
-  .el-theme{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--el);font-weight:600;margin:3px 0 14px}
-  .el-desc{font-size:.92rem;color:var(--taupe);line-height:1.55}
-  .method-note{margin-top:40px;font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--ink);text-align:center;max-width:46ch;margin-left:auto;margin-right:auto}
+  .section {
+    padding: 68px 20px;
+  }
 
-  /* ── Testimonials ── */
-  .quotes{background:var(--sand)}
-  .quote-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px}
-  @media(max-width:760px){.quote-grid{grid-template-columns:1fr}}
-  .quote{background:var(--paper);border-radius:16px;padding:34px 32px;border:1px solid var(--line)}
-  .quote p{font-family:var(--serif);font-size:1.12rem;line-height:1.5;font-weight:400;color:var(--ink)}
-  .quote .who{margin-top:18px;font-family:var(--sans);font-size:.82rem;letter-spacing:.04em;color:var(--clay);font-weight:600}
-  .quote.feature{grid-column:1/-1;background:var(--ink);color:var(--paper);text-align:center;padding:46px 38px}
-  .quote.feature p{color:var(--paper);font-size:clamp(1.3rem,2.6vw,1.7rem);max-width:24ch;margin:0 auto}
-  .quote.feature .who{color:#E2B9A6}
+  .hero {
+    min-height: auto;
+    padding: 60px 20px 55px;
+  }
 
-  /* ── About ── */
-  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
-  @media(max-width:880px){.about-grid{grid-template-columns:1fr;gap:38px}}
-  .about p+p{margin-top:18px}
-  .creds{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-  .cred{font-size:.82rem;color:var(--ink);background:var(--sand);border:1px solid var(--line);padding:8px 15px;border-radius:999px}
+  .hero-subtitle {
+    font-size: 43px;
+  }
 
-  /* ── Who / Outcomes ── */
-  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px}
-  @media(max-width:760px){.two-col{grid-template-columns:1fr;gap:32px}}
-  .list-clean{list-style:none;margin-top:20px}
-  .list-clean li{padding:11px 0;border-bottom:1px solid var(--line);font-size:1rem;color:var(--ink)}
-  .list-clean li::before{content:"—  ";color:var(--clay);font-weight:600}
+  .service-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-  /* ── Services ── */
-  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
-  @media(max-width:760px){.svc-grid{grid-template-columns:1fr}}
-  .svc{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:32px 28px}
-  .svc h3{font-size:1.3rem;margin-bottom:10px}
-  .svc p{font-size:.94rem;color:var(--taupe)}
+  .environment-grid,
+  .player-grid,
+  .training-grid,
+  .discount-grid,
+  .motivations,
+  .availability-grid {
+    grid-template-columns: 1fr;
+  }
 
-  /* ── Final CTA ── */
-  .final{background:var(--ink);color:var(--paper);text-align:center}
-  .final h2{color:var(--paper);font-size:clamp(2rem,4.5vw,3rem)}
-  .final p{color:#D9CFC0;max-width:40ch;margin:20px auto 34px;font-size:1.1rem}
-  .final .btn{background:var(--clay)}
-  .final .btn:hover{background:var(--clay-deep)}
-  .final .contact-line{margin-top:26px;font-size:.95rem;color:#C9BCA9}
-  .final .contact-line a{color:#E2B9A6}
+  .environment-card {
+    min-height: 360px;
+  }
 
-  /* ── Footer ── */
-  footer{background:var(--paper);padding:54px 0 60px;border-top:1px solid var(--line)}
-  .foot-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
-  .foot-vision{max-width:42ch;font-size:.9rem;color:var(--taupe)}
-  .foot-vision strong{color:var(--ink);font-family:var(--serif);font-weight:600}
-  .foot-meta{font-size:.86rem;color:var(--taupe);text-align:right}
-  .foot-credit{margin-top:40px;text-align:center;font-size:.78rem;color:var(--taupe);letter-spacing:.04em}
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
 
-  /* reveal */
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-  .reveal.in{opacity:1;transform:none}
+  .testimonial.josh {
+    grid-column: auto;
+  }
+
+  .outro {
+    padding: 85px 20px 65px;
+  }
+
+  .updated {
+    position: static;
+    margin-top: 9px;
+    text-align: right;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-subtitle {
+    font-size: 38px;
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .hero-quote {
+    font-size: 17px;
+  }
+}
 </style>
 </head>
+
 <body>
 
-<!-- ── NAV ── -->
-<nav>
-  <div class="wrap nav-inner">
-    <div class="brand">Jason Bonzon<small>Tennis · Performance</small></div>
-    <div class="nav-links">
-      <a href="#method">The Method</a>
-      <a href="#proof">Players</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#book" class="btn">Book a Lesson</a>
+<header class="site-header">
+  <div>
+    <div class="brand">
+      <span class="brand-bonsai">BONSAI</span>
+      <span class="brand-tennis">TENNIS</span>
+      <span class="brand-business">PRACTICE</span>
     </div>
-  </div>
-</nav>
 
-<!-- ── HERO ── -->
-<header class="hero">
-  <div class="wrap hero-grid">
-    <div class="reveal">
-      <span class="eyebrow">Private Coaching · Orange County</span>
-      <h1>A different way to <em>learn the game.</em></h1>
-      <p class="sub">Private tennis coaching, ball-machine training, and performance development — for players who want to understand <em>how</em> they play, not just fix a stroke.</p>
-      <div class="hero-cta">
-        <a href="#book" class="btn">Book a First Lesson</a>
-        <a href="#method" class="btn btn-ghost">See the method</a>
-      </div>
-      <p class="hero-meta">15+ years coaching · Spinfire Pro 2 ball machine · Adult beginners to league competitors</p>
-    </div>
-    <div class="photo reveal">
-      <span class="ph-note">Photo<br>Jason on court</span>
+    <div class="guided-by">
+      guided by
+      <span class="guided-by-name">Jason C. Bonzon</span>
     </div>
   </div>
 </header>
 
-<!-- ── POSITIONING ── -->
-<section class="position">
-  <div class="wrap position-grid">
-    <div class="reveal">
-      <span class="eyebrow">The Idea</span>
-      <p class="big" style="margin-top:18px">Most coaching fixes <b>strokes.</b><br>I develop <b>players</b> — decision-making, adaptation, confidence under pressure, and an understanding of how <i>you</i> learn.</p>
-    </div>
-    <div class="reveal">
-      <p style="color:var(--taupe)">Technique matters. But progress depends on more than mechanics. My coaching draws on learning science, systems thinking, and a touch of Zen — so practice actually transfers to the moment a point is on the line.</p>
-      <p style="color:var(--taupe);margin-top:16px">Players don't just hit better shots. They start to <em class="serif-em">see the game differently.</em></p>
-    </div>
-  </div>
-</section>
+<main>
 
-<!-- ── METHOD: FIVE ENVIRONMENTS ── -->
-<section id="method">
-  <div class="wrap">
-    <div class="method-intro reveal">
-      <div class="sec-head">
-        <span class="eyebrow">The Method</span>
-        <h2>The Five Training Environments</h2>
-        <p class="lead">Not classes — configurable environments, combined into a development path built around <em>you.</em></p>
-      </div>
-    </div>
-    <div class="elements">
-      <div class="el-card reveal" style="--el:var(--earth)">
-        <div class="el-glyph">🜃</div>
-        <div class="el-name">Earth</div>
-        <div class="el-theme">Structure</div>
-        <p class="el-desc">Fundamentals, consistency, footwork, balance, and repeatable mechanics.</p>
-      </div>
-      <div class="el-card reveal" style="--el:var(--water)">
-        <div class="el-glyph">🜄</div>
-        <div class="el-name">Water</div>
-        <div class="el-theme">Adaptation</div>
-        <p class="el-desc">Timing, responsiveness, flow, adjustment, and live problem-solving.</p>
-      </div>
-      <div class="el-card reveal" style="--el:var(--fire)">
-        <div class="el-glyph">🜂</div>
-        <div class="el-name">Fire</div>
-        <div class="el-theme">Pressure</div>
-        <p class="el-desc">Competitive execution under stress — confidence and resilience.</p>
-      </div>
-      <div class="el-card reveal" style="--el:var(--wind)">
-        <div class="el-glyph">🜁</div>
-        <div class="el-name">Wind</div>
-        <div class="el-theme">Understanding</div>
-        <p class="el-desc">Pattern recognition, tactics, perception, anticipation, game IQ.</p>
-      </div>
-      <div class="el-card reveal" style="--el:var(--void)">
-        <div class="el-glyph">●</div>
-        <div class="el-name">Void</div>
-        <div class="el-theme">Uncertainty</div>
-        <p class="el-desc">Creativity, awareness, unpredictability, and real-time adaptation.</p>
-      </div>
-    </div>
-    <p class="method-note reveal">"Most players don't need more information.<br>They need a different way of seeing."</p>
-  </div>
-</section>
+<section class="hero">
+  <div class="section-title">⚾︎ COGNITIVE TENNIS COACHING</div>
 
-<!-- ── TESTIMONIALS ── -->
-<section id="proof" class="quotes">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Players</span>
-      <h2>What it feels like to train here</h2>
+  <h1 class="hero-subtitle">
+    FIND YOUR OWN TENNIS
+  </h1>
+
+  <p class="hero-description">
+    Thoughtful, personalized tennis practice<br>
+    for players who want to improve their game
+  </p>
+
+  <p class="hero-quote">
+    Learn to understand tennis, not just perform it.
+  </p>
+
+  <div class="hero-services">
+    <div class="hero-services-title">
+      FOUR WAYS TO PRACTICE
     </div>
-    <div class="quote-grid">
-      <div class="quote feature reveal">
-        <p>"Everything I knew about the game quietly shifted."</p>
-        <div class="who">— Josh</div>
+
+    <div class="service-preview-grid">
+      <div class="preview-card">
+        <span class="preview-symbol">○</span>
+        <div class="preview-name">Independent Training</div>
+        <div class="preview-price">
+          <span class="cash">$60 cash</span><br>
+          <span class="digital">$65 digital</span>
+        </div>
       </div>
-      <div class="quote reveal">
-        <p>"He doesn't impose a single playing style — he helps me develop my own. Ambidextrous, unexpected shots I'd never seen. Kind, supportive, and genuinely motivating."</p>
-        <div class="who">— Poojan</div>
+
+      <div class="preview-card">
+        <span class="preview-symbol">◎</span>
+        <div class="preview-name">Guided Training</div>
+        <div class="preview-price">
+          <span class="cash">$100 cash</span><br>
+          <span class="digital">$105 digital</span>
+        </div>
       </div>
-      <div class="quote reveal">
-        <p>"Excels in the cognitive side of tennis — deep mental models and high-level frameworks. An intellectual, deeply authentic approach that respects your own goals."</p>
-        <div class="who">— Daniel</div>
+
+      <div class="preview-card">
+        <span class="preview-symbol">◉</span>
+        <div class="preview-name">Collaborative Training</div>
+        <div class="preview-price">
+          <span class="cash">$120 cash</span><br>
+          <span class="digital">$125 digital</span>
+        </div>
       </div>
-      <div class="quote reveal">
-        <p>"New and unique techniques in one or two sessions. His coaching is unrivaled in its uniqueness and effectiveness — practice is smoother and more fun."</p>
-        <div class="who">— Bryan</div>
-      </div>
-      <div class="quote reveal">
-        <p>"Creative ball-machine routines and fresh coaching ideas helped me build points for my aggressive game. I reached the finals of a local OC league."</p>
-        <div class="who">— Rishi</div>
+
+      <div class="preview-card">
+        <span class="preview-symbol">◌</span>
+        <div class="preview-name">Lab Training</div>
+        <div class="preview-price">
+          <span class="cash">$70 cash</span><br>
+          <span class="digital">$75 digital</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ── ABOUT ── -->
-<section id="about">
-  <div class="wrap about-grid">
-    <div class="photo reveal" style="aspect-ratio:1/1">
-      <span class="ph-note">Photo<br>Portrait / on court</span>
-    </div>
-    <div class="reveal">
-      <span class="eyebrow">About Jason</span>
-      <h2 style="font-size:clamp(1.8rem,4vw,2.6rem);margin:14px 0 20px">Tennis is where the thinking becomes visible.</h2>
-      <p style="color:var(--taupe)">I'm a philosophy-trained, systems-minded coach. For 15+ years I've helped people learn — as a private tutor, an operations lead, and on the court. The same practice shows up everywhere: observe what's happening, find the friction, make a practical change, and help people adapt.</p>
-      <p style="color:var(--taupe)">Tennis is the first place I've turned that into a structured system. I play ambidextrously, train with a Spinfire Pro 2 ball machine, and care less about a "correct" forehand than about helping you build a game that's genuinely <em class="serif-em">yours.</em></p>
-      <div class="creds">
-        <span class="cred">15+ years coaching & teaching</span>
-        <span class="cred">B.A. Philosophy / Interdisciplinary Studies</span>
-        <span class="cred">Ambidextrous play</span>
-        <span class="cred">Spinfire Pro 2</span>
-        <span class="cred">Orange County, CA</span>
-      </div>
-    </div>
+<section class="section philosophy">
+  <div class="section-title">⚾︎ PHILOSOPHY</div>
+
+  <h2 class="philosophy-heading">
+    <span>Tennis,</span><br>
+    <span>understood differently…</span>
+  </h2>
+
+  <div class="philosophy-copy">
+    <p>
+      Most players arrive wanting to play better.<br>
+      The practice begins there — but it doesn't have to end there.
+    </p>
+
+    <p>
+      <span class="bonsai-name">
+        <strong>
+          <span class="bonsai">Bonsai</span>
+          <span class="tennis">Tennis</span>
+          <span class="business">Practice</span>
+        </strong>
+      </span>
+      creates environments where players can experiment, recognize patterns,
+      make decisions, and develop a game that belongs to them.
+    </p>
+
+    <p>
+      Learning becomes intuitive, improvement becomes sustainable.
+    </p>
+  </div>
+
+  <div class="cascade">
+    <div>FUEL THE PASSION.</div>
+    <div>SAVE THE LESSONS.</div>
+    <div>BURN THE WASTE.</div>
   </div>
 </section>
 
-<!-- ── WHO / OUTCOMES ── -->
-<section class="position" style="padding:96px 0">
-  <div class="wrap two-col">
-    <div class="reveal">
-      <span class="eyebrow">Who I work best with</span>
-      <ul class="list-clean">
-        <li>Adult beginners & returning players</li>
-        <li>Recreational players who want to level up</li>
-        <li>League & club competitors</li>
-        <li>Independent learners & analytical thinkers</li>
-        <li>Anyone seeking a deeper understanding of the game</li>
+<section class="section environments">
+  <div class="section-title">⚾︎ PRACTICE ENVIRONMENTS</div>
+
+  <div class="environment-intro">
+    <h3>Five ways of looking at the game…</h3>
+    <p>These are not levels or steps. They are lenses for practice.</p>
+  </div>
+
+  <div class="environment-grid">
+
+    <article class="environment-card structure">
+      <div class="environment-symbol">🜃</div>
+      <h3 class="environment-title">STRUCTURE</h3>
+      <ul class="environment-list">
+        <li>Stability</li>
+        <li>Preparation</li>
+        <li>Adjustments</li>
+      </ul>
+      <div class="environment-bottom">
+        <div class="environment-divider"></div>
+        <p class="environment-statement">
+          PATTERNS THAT CREATE CONSISTENCY
+        </p>
+      </div>
+    </article>
+
+    <article class="environment-card adaptation">
+      <div class="environment-symbol">🜄</div>
+      <h3 class="environment-title">ADAPTATION</h3>
+      <ul class="environment-list">
+        <li>Timing</li>
+        <li>Variation</li>
+        <li>Response</li>
+      </ul>
+      <div class="environment-bottom">
+        <div class="environment-divider"></div>
+        <p class="environment-statement">
+          RESPONSES TO DIVERSE BALL SITUATIONS
+        </p>
+      </div>
+    </article>
+
+    <article class="environment-card understanding">
+      <div class="environment-symbol">🜁</div>
+      <h3 class="environment-title">UNDERSTANDING</h3>
+      <ul class="environment-list">
+        <li>Shot selection</li>
+        <li>Decision making</li>
+        <li>Context</li>
+      </ul>
+      <div class="environment-bottom">
+        <div class="environment-divider"></div>
+        <p class="environment-statement">
+          OPTIONS VIA ACTIONABLE-INTELLIGENCE
+        </p>
+      </div>
+    </article>
+
+    <article class="environment-card pressure">
+      <div class="environment-symbol">🜂</div>
+      <h3 class="environment-title">PRESSURE</h3>
+      <ul class="environment-list">
+        <li>Intensity</li>
+        <li>Endurance</li>
+        <li>Composure</li>
+      </ul>
+      <div class="environment-bottom">
+        <div class="environment-divider"></div>
+        <p class="environment-statement">
+          PERFORMANCE UNDER DIFFICULT CONDITIONS
+        </p>
+      </div>
+    </article>
+
+    <article class="environment-card uncertainty">
+      <div class="environment-symbol">∅</div>
+      <h3 class="environment-title">UNCERTAINTY</h3>
+      <ul class="environment-list">
+        <li>Ambiguity</li>
+        <li>Experimentation</li>
+        <li>Improvisation</li>
+      </ul>
+      <div class="environment-bottom">
+        <div class="environment-divider"></div>
+        <p class="environment-statement">
+          TECHNIQUES THROUGH REVELATION
+        </p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="section players">
+  <div class="section-title">⚾︎ FOR PLAYERS</div>
+
+  <h2 class="players-heading">
+    Different Players<br>
+    Different Motivations
+  </h2>
+
+  <div class="player-grid">
+
+    <article class="player-card">
+      <h3>NEWER PLAYERS</h3>
+      <p>
+        Learn the game without feeling embarrassed by what you don't yet know.
+        Clear explanations and experimentation make tennis easier to understand.
+      </p>
+      <div class="player-testimonial">
+        “…he encourages me to develop my own unique playing style so I can enjoy
+        the game and perform at my best.”
+      </div>
+    </article>
+
+    <article class="player-card">
+      <h3>DEVELOPING PLAYERS</h3>
+      <p>
+        Build fundamentals while learning to recognize patterns, solve problems,
+        and make your own adjustments.
+      </p>
+      <div class="player-testimonial">
+        “…he instead offers abstract, high level frameworks and encourages you
+        to think critically.”
+      </div>
+    </article>
+
+    <article class="player-card">
+      <h3>EXPERIENCED PLAYERS</h3>
+      <p>
+        Break out of familiar patterns, explore new possibilities, and add useful
+        tools to an existing game.
+      </p>
+      <div class="player-testimonial">
+        “…he developed creative ball machine routines, applied new coaching ideas,
+        and incorporated the most effective drills.”
+      </div>
+    </article>
+
+    <article class="player-card special">
+      <h3>PLAYERS WHO WANT SOMETHING DIFFERENT</h3>
+      <p>
+        If traditional instruction has left you wanting more understanding,
+        creativity, or ownership, this practice may be a better fit.
+      </p>
+      <div class="player-testimonial">
+        “…allows someone to add to their tool belt of shots and creates a game
+        that isn’t the norm.”
+      </div>
+    </article>
+
+  </div>
+
+  <div class="motivations">
+
+    <article class="motivation-card">
+      <h3>THE SOCIAL BUDDIES</h3>
+      <p>
+        Players who want to keep tennis enjoyable, social, and steadily improving
+        without making every session about performance.
+      </p>
+    </article>
+
+    <article class="motivation-card">
+      <h3>THE RECEPTIVE ATHLETES</h3>
+      <p>
+        Competitors open to new perspectives and analytical ideas that sharpen
+        decisions as much as strokes.
+      </p>
+    </article>
+
+    <article class="motivation-card">
+      <h3>THE ANALYTICAL MINDS</h3>
+      <p>
+        Players drawn to the strategy, patterns, problem-solving, and deeper
+        questions inside the game.
+      </p>
+    </article>
+
+    <article class="motivation-card">
+      <h3>THE LIFESTYLE LEARNERS</h3>
+      <p>
+        Players for whom tennis becomes a path of learning, curiosity,
+        self-mastery, and continued discovery.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<section class="section training">
+  <div class="section-title">⚾︎ TRAINING</div>
+
+  <div class="training-grid">
+
+    <article class="training-card">
+      <div class="training-symbol">○</div>
+      <h3 class="training-title">
+        INDEPENDENT<br>TRAINING
+      </h3>
+      <div class="training-price">
+        <span class="cash">$60 cash</span> /
+        <span class="digital">$65 digital</span>
+      </div>
+      <div class="training-description">
+        Structured hitting with minimal coaching. Observational notes available
+        on request.
+        <span class="voice">SHOW UP AND HIT</span>
+      </div>
+    </article>
+
+    <article class="training-card">
+      <div class="training-symbol">◎</div>
+      <h3 class="training-title">
+        GUIDED<br>TRAINING
+      </h3>
+      <div class="training-price">
+        <span class="cash">$100 cash</span> /
+        <span class="digital">$105 digital</span>
+      </div>
+      <div class="training-description">
+        Observation, combined with selective coaching interventions to facilitate
+        and demonstrate changes in movement, decision-making, and execution.
+        <span class="voice">...TRY THIS ...LIKE THIS</span>
+      </div>
+    </article>
+
+    <article class="training-card">
+      <div class="training-symbol">◉</div>
+      <h3 class="training-title">
+        COLLABORATIVE<br>TRAINING
+      </h3>
+      <div class="training-price">
+        <span class="cash">$120 cash</span> /
+        <span class="digital">$125 digital</span>
+      </div>
+      <div class="training-description">
+        A fully personalized coaching experience in which coach and player
+        investigate the game together through dialogue, experimentation,
+        problem-solving, and increasingly independent discovery.
+        <span class="voice">LET'S EXPLORE THIS TOGETHER</span>
+      </div>
+    </article>
+
+    <article class="training-card lab">
+      <div class="training-symbol">◌</div>
+      <h3 class="training-title">
+        LAB<br>TRAINING
+      </h3>
+      <div class="training-price">
+        <span class="cash">$70 cash</span> /
+        <span class="digital">$75 digital</span>
+      </div>
+      <div class="training-description">
+        Unstructured experimental play centered on adaptation, discovery,
+        improvisation, and learning to maintain detached composure when the
+        expected solution disappears.
+        <span class="voice">WAS THAT THE SHOT YOU WANTED?</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="section session">
+  <div class="section-title">⚾︎ SESSION OVERVIEW</div>
+
+  <div class="session-content">
+
+    <div>
+      <h3>Session includes:</h3>
+
+      <ul class="session-list">
+        <li>
+          <strong>Court Reservation</strong>
+          <span class="guide">conveniently secured by instructor</span>
+        </li>
+
+        <li>
+          <strong>High-volume repetition</strong>
+          <span class="guide">
+            via constant ball collection and feed
+            (Spinfire Pro 2 ball machine)
+          </span>
+        </li>
+
+        <li>
+          <strong>Dynamic practice structure</strong>
+          <span class="guide">
+            as the instructor observes performance, suggests adjustments,
+            and adapts the training environment
+          </span>
+        </li>
+
+        <li>
+          <strong>Post-session reflection</strong>
+          <span class="guide">
+            with observations and useful takeaways from the practice
+          </span>
+        </li>
       </ul>
     </div>
-    <div class="reveal">
-      <span class="eyebrow">What players gain</span>
-      <ul class="list-clean">
-        <li>Better match decision-making</li>
-        <li>Greater adaptability during play</li>
-        <li>Confidence under pressure</li>
-        <li>Stronger transfer from practice to competition</li>
-        <li>More enjoyment — and a clearer sense of their own game</li>
-      </ul>
+
+    <div>
+      <h3>Session Availability</h3>
+
+      <p class="session-availability-note">
+        These are windows of availability in which one 60-minute session may
+        be scheduled per window. One client per window.
+      </p>
+
+      <div class="availability-grid">
+
+        <article class="availability-card">
+          <h3>MORNING</h3>
+          <div class="availability-time">8:30–10:30 AM</div>
+          <p class="availability-description">
+            Start the day sharp and clear-minded.
+          </p>
+        </article>
+
+        <article class="availability-card">
+          <h3>AFTERNOON</h3>
+          <div class="availability-time">3:30–5:30 PM</div>
+          <p class="availability-description">
+            Reset and refine through the midday.
+          </p>
+        </article>
+
+        <article class="availability-card">
+          <h3>EVENING</h3>
+          <div class="availability-time">6:30–8:30 PM</div>
+          <p class="availability-description">
+            Wind down with focused, cooler-air play.
+          </p>
+        </article>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section discounts">
+  <div class="section-title">⚾︎ DISCOUNT INCENTIVES</div>
+
+  <p class="discount-intro">
+    Commitment options designed to encourage continued practice and exploration,
+    rather than bargain hunting.
+  </p>
+
+  <div class="discount-grid">
+
+    <article class="discount-card">
+      <h3>INTRODUCTORY PRACTICE</h3>
+      <p>
+        <span class="discount-number">15%</span>
+        off your first training session of your choice.
+      </p>
+    </article>
+
+    <article class="discount-card">
+      <h3>INDEPENDENT TRIO</h3>
+      <p>
+        <span class="discount-number">15%</span>
+        off three <u>prepaid</u> sessions
+        (Independent ONLY).
+      </p>
+    </article>
+
+    <article class="discount-card">
+      <h3>INSTRUCTIONAL TRIO</h3>
+      <p>
+        <span class="discount-number">10%</span>
+        off three <u>prepaid</u> sessions
+        (Guided and/or Collaborative sessions ONLY).
+      </p>
+    </article>
+
+    <article class="discount-card special">
+      <h3>PRACTICE QUARTET</h3>
+      <p>
+        <span class="discount-number">12%</span>
+        off four <u>prepaid</u> training services,
+        utilizing all services as a <strong>special</strong>.
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<section class="section testimonials">
+  <div class="section-title">⚾︎ TESTIMONIALS</div>
+
+  <h2 class="testimonial-heading">
+    What players noticed:
+  </h2>
+
+  <div class="testimonial-grid">
+
+    <article class="testimonial">
+      <blockquote>
+        “He makes you feel comfortable and not embarrassed if you hit it bad...
+        you can tell when a coach really cares about improving their players and
+        that is what Jason has.”
+      </blockquote>
+      <div class="testimonial-meta">
+        TESTIMONIAL 007 — KIRAS [Jul 2026]
+      </div>
+    </article>
+
+    <article class="testimonial">
+      <blockquote>
+        “The instructor excels in the cognitive side of tennis, teaching with
+        deep mental models. His lessons are not about mindless, high volume
+        drills. He instead offers abstract, high level frameworks and encourages
+        you to think critically.”
+      </blockquote>
+      <div class="testimonial-meta">
+        TESTIMONIAL 006 — DANIEL [May 2026]
+      </div>
+    </article>
+
+    <article class="testimonial">
+      <blockquote>
+        “With Jason's help, I was able to learn new and unique techniques in the
+        span of one or two sessions. Practicing has become a lot smoother and
+        more fun.”
+      </blockquote>
+      <div class="testimonial-meta">
+        TESTIMONIAL 004 — BRYAN [Mar 2026]
+      </div>
+    </article>
+
+    <article class="testimonial">
+      <blockquote>
+        “Jason has been instrumental in improving my tennis game significantly.
+        He suggests interesting techniques and insights that I would not have
+        discovered or refined on my own.”
+      </blockquote>
+      <div class="testimonial-meta">
+        TESTIMONIAL 002 — POOJAN [Jan 2026]
+      </div>
+    </article>
+
+    <article class="testimonial josh">
+      <blockquote>
+        “I've been playing tennis for years, chasing that elusive blend of
+        power, precision, and consistency. Then I met Jason and everything I
+        knew about the game quietly shifted. His approach isn't about conforming
+        to traditional ‘correct’ strokes, but about discovering what works for
+        your body, your pace, and your mindset.”
+      </blockquote>
+      <div class="testimonial-meta">
+        TESTIMONIAL 001 — JOSH [Jan 2026]
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="outro">
+  <h2 class="outro-title">
+    <span>IMPROVE THE PERSON</span>
+    <span>IMPROVE THE PLAYER</span>
+  </h2>
+
+  <p class="outro-copy">
+    If you, or anyone you know, is interested in tennis, and<br>
+    open to a different approach to tennis practice and training<br>
+    get in touch and let's connect
+  </p>
+
+  <div class="outro-contact">
+    <div>
+      Phone:
+      <a href="tel:0000000000">(000) 000-0000</a>
+    </div>
+
+    <div>
+      Email:
+      <a href="mailto:hello@jasontenniscoaching.com">
+        hello@jasontenniscoaching.com
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ── SERVICES ── -->
-<section id="services">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Ways to Train</span>
-      <h2>Services</h2>
-      <p class="lead">Coaching, court time, and gear — everything you need to train. Morning, afternoon, and evening availability across Orange County.</p>
-    </div>
-    <div class="svc-grid">
-      <div class="svc reveal">
-        <h3>Private Lessons</h3>
-        <p>One-on-one, fully personalized coaching across the five environments — built around where you are and where you want to go.</p>
-      </div>
-      <div class="svc reveal">
-        <h3>Court &amp; Ball-Machine Sessions</h3>
-        <p>I reserve the court and set up the Spinfire Pro 2 ball machine for your session — structured, high-repetition drill environments or focused practice time, with or without live coaching.</p>
-      </div>
-      <div class="svc reveal">
-        <h3>Racquet Stringing &amp; Customization</h3>
-        <p>Professional restringing, tension tuning, and racquet setup — so your equipment actually fits your game and how you play.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<footer class="footer">
+  <div>© Bonsai Tennis Practice</div>
 
-<!-- ── FINAL CTA ── -->
-<section id="book" class="final">
-  <div class="wrap narrow reveal">
-    <span class="eyebrow" style="color:#E2B9A6">Start</span>
-    <h2 style="margin-top:16px">Let's find your game.</h2>
-    <p>Tell me where you are and what you'd like to work on. We'll start with a single lesson and see how you see the game differently.</p>
-    <a href="mailto:jason.c.bonzon@gmail.com?subject=Tennis%20Lesson%20Inquiry" class="btn">Book a First Lesson</a>
-    <div class="contact-line">
-      or reach out directly — <a href="tel:+13103105033">(310) 310-5033</a> · <a href="mailto:jason.c.bonzon@gmail.com">jason.c.bonzon@gmail.com</a>
-    </div>
-  </div>
-</section>
-
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div class="foot-vision">
-        <strong>Human Systems Studio</strong><br>
-        Tennis is the first branch. The deeper work is human performance — how people learn, adapt, and perform under real conditions. More to come.
-      </div>
-      <div class="foot-meta">
-        Jason C. Bonzon<br>
-        Tennis Coaching & Performance Development<br>
-        Orange County, California<br>
-        <a href="mailto:jason.c.bonzon@gmail.com">jason.c.bonzon@gmail.com</a> · (310) 310-5033
-      </div>
-    </div>
-    <div class="foot-credit">© <span id="yr"></span> Jason C. Bonzon · Site by Clarity Productions</div>
+  <div class="updated">
+    updated 11Aug26 (T)
   </div>
 </footer>
 
-<script>
-  document.getElementById('yr').textContent = new Date().getFullYear();
-  // gentle scroll reveal
-  var io = new IntersectionObserver(function(es){
-    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {threshold:.12});
-  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
-</script>
+</main>
+
 </body>
 </html>
