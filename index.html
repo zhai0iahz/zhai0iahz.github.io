@@ -134,6 +134,8 @@ h1, h2, h3, p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero .section-title {
@@ -898,10 +900,48 @@ a, button, .preview-card, .environment-card, .player-card, .training-card,
 .modal .btn { width: 100%; justify-content: center; margin-top: 8px; padding: 14px; font-size: 13px; }
 .modal-note { margin-top: 12px; font-size: 11px; color: var(--guide-blue); text-align: center; }
 @media (max-width: 480px) { .field-row { grid-template-columns: 1fr; } .modal { padding: 28px 20px; } }
+
+/* ── Option C hero: bonsai backdrop ── */
+.hero > .section-title, .hero-subtitle, .hero-description, .hero-quote, .hero-services { position: relative; z-index: 2; }
+.hero-subtitle { text-align: left; margin: 0 0 20px; max-width: min(640px, 62%); }
+.hero-description { text-align: left; margin: 0 0 20px; }
+.hero-quote { text-align: left; margin: 0 0 42px; }
+.hero-bonsai {
+  --green-d:#4d7a55; --bark:#5a4636; --moss:#5a7d4e; --pot:#123047; --pot-rim:#0c2233;
+  position: absolute; z-index: 1; right: 0; top: 40%; transform: translateY(-50%);
+  width: min(46%, 500px); height: auto; aspect-ratio: 300/330; opacity: .92; pointer-events: none;
+  filter: drop-shadow(0 12px 44px rgba(0,0,0,.4));
+}
+@media (max-width: 900px) {
+  .hero-subtitle, .hero-description, .hero-quote { max-width: 100%; }
+  .hero-bonsai { opacity: .18; width: 108%; right: -22%; top: 34%; }
+}
 </style>
 </head>
 
 <body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="bonsai" viewBox="0 0 300 330">
+    <path d="M104 270 H196 L188 302 Q186 310 178 310 H122 Q114 310 112 302 Z" fill="var(--pot,#C96A32)"/>
+    <rect x="97" y="259" width="106" height="15" rx="4" fill="var(--pot-rim,#a9531f)"/>
+    <ellipse cx="150" cy="260" rx="46" ry="6" fill="var(--moss)"/>
+    <path d="M150 260 C 146 233 137 225 140 201 C 143 177 161 171 156 147 C 152 129 146 121 150 104" fill="none" stroke="var(--bark)" stroke-width="13" stroke-linecap="round"/>
+    <path d="M141 206 C 120 199 107 187 95 179" fill="none" stroke="var(--bark)" stroke-width="7.5" stroke-linecap="round"/>
+    <path d="M156 151 C 179 147 193 151 208 158" fill="none" stroke="var(--bark)" stroke-width="6.5" stroke-linecap="round"/>
+    <ellipse cx="90" cy="176" rx="54" ry="27" fill="var(--green-d)"/>
+    <ellipse cx="90" cy="169" rx="52" ry="25" fill="var(--green)"/>
+    <ellipse cx="212" cy="152" rx="46" ry="23" fill="var(--green-d)"/>
+    <ellipse cx="212" cy="146" rx="44" ry="21" fill="var(--green)"/>
+    <ellipse cx="150" cy="94" rx="74" ry="35" fill="var(--green-d)"/>
+    <ellipse cx="150" cy="87" rx="72" ry="33" fill="var(--green)"/>
+    <circle cx="128" cy="80" r="2.6" fill="var(--gold)"/>
+    <circle cx="170" cy="96" r="2.6" fill="var(--gold)"/>
+    <circle cx="150" cy="74" r="2.2" fill="var(--gold)"/>
+    <circle cx="84" cy="166" r="2.2" fill="var(--gold)"/>
+    <circle cx="216" cy="145" r="2.2" fill="var(--gold)"/>
+  </symbol>
+</svg>
 
 <header class="site-header">
   <div>
@@ -921,6 +961,7 @@ a, button, .preview-card, .environment-card, .player-card, .training-card,
 <main>
 
 <section class="hero">
+  <svg class="hero-bonsai" viewBox="0 0 300 330" aria-hidden="true"><use href="#bonsai"/></svg>
   <div class="section-title">⚾︎ COGNITIVE TENNIS COACHING</div>
 
   <h1 class="hero-subtitle">
